@@ -8,7 +8,7 @@
 	3. size limit : 100 kb
 	4. file proccess
 - anywhere on the target site that has an uploader, this vulnerability may exist.
-- shell uploading is possible in a form uploader or a profile photo uploader or an uploader inside the admin panel [[2-Sql Injection (Basic)]].
+- shell uploading is possible in a form uploader or a profile photo uploader or an uploader inside the admin panel [[02-Sql Injection (Basic)]].
 - in uploader, we upload shell to get high level access from the target site.
 - download different shells from : https://r57.gen.tr
 - for upload the shell, we try all the paths of the site that have uploaders.

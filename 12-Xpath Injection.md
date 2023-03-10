@@ -1,11 +1,11 @@
 # <mark style="background: #FF5582A6;">Prerequisite :</mark> 
-[[2-Sql Injection (Basic)]]
-[[3-Sql Injection (Errors)]]
+[[02-Sql Injection (Basic)]]
+[[03-Sql Injection (Errors)]]
 # <mark style="background: #FF5582A6;">Description :</mark> 
 due to the problem of having XML files of a site, the xpath injection vulnerability is created (many site don't use XML files, so they don't have this vulnerability).
 
 where do we use the xpath injection :
-1. in [[2-Sql Injection (Basic)]] we encountering the following error :
+1. in [[02-Sql Injection (Basic)]] we encountering the following error :
 	- <mark style="background: #FF5582A6;">the used SELECT statements have a different number of columns</mark> 
 
 2. when we type (<mark style="background: #FF5582A6;">order by 9999--</mark> ) and show us we don't have this number of columns and we type (<mark style="background: #FF5582A6;">order by 1--</mark> ) and show us again we don't have this number of columns.
@@ -14,11 +14,11 @@ where do we use the xpath injection :
    doesn't show the vulnerability column.
    (in additio to xpath injection, we can also solve this problem with : [[15-Blind Sql Injection]])
 
-4. before [[2-Sql Injection (Basic)]] we can also try xpath injection because these two, are two separate vulnerabilities.
+4. before [[02-Sql Injection (Basic)]] we can also try xpath injection because these two, are two separate vulnerabilities.
 
 # How To Do (Steps) :
 ## Step 1 :
-90% of xpath injection is [[2-Sql Injection (Basic)]] command.
+90% of xpath injection is [[02-Sql Injection (Basic)]] command.
 only the following command is new :
 - <mark style="background: #FFB86CA6;">and extractvalue(rand(),concat(0x7e,version()))--</mark> 
 ### Point 1 :
@@ -26,15 +26,15 @@ if it didn't show us anything in the first step with the first command :
 - <mark style="background: #FFB86CA6;"><mark style="background: #FF5582A6;">'</mark> and extractvalue(rand(),concat(0x7e,version()))--<mark style="background: #FF5582A6;">+</mark> </mark> 
 
 ### <mark style="background: #FF5582A6;">Point 2</mark> :
-[[7-Like (Method)]] can be used in combination with [[6-Limit (Method)]]
-(it's explained on last point in [[7-Like (Method)]])
+[[07-Like (Method)]] can be used in combination with [[06-Limit (Method)]]
+(it's explained on last point in [[07-Like (Method)]])
 (<mark style="background: #FF5582A6;">reminder :</mark> like method, searches all databases to find the important table)
 
 ### Point 3 :
 when we reached the important table and found it, for next step we return the limit to the first state, that is : limit 0,1
 
 ## Step 2 :
-when we see the version, it's means that the vulnerability has been confirmed and the rest of the steps are similar to [[2-Sql Injection (Basic)]] :
+when we see the version, it's means that the vulnerability has been confirmed and the rest of the steps are similar to [[02-Sql Injection (Basic)]] :
 - <mark style="background: #FFB86CA6;">and extractvalue(rand(),concat(0x7e,(select table_name from information_schema.tables where table_schema=database() limit 0,1)))--</mark> 
 (limit is used because we don't have group_concat)
 
@@ -90,9 +90,9 @@ if we encounter an error with the second code (2), that is, we got an error by d
 	
 	- <mark style="background: #FFB86CA6;">and extractvalue(rand(),concat(0x7e,(select concat(the important column) from the important table limit 0,1)))--</mark> 
 	
-	this method is similar to [[9-Version 4]]
+	this method is similar to [[09-Version 4]]
 	because we have to guess the important table and the important column.
-	similar to the [[9-Version 4]], we can also use Burp Suite to guess, first, the important table and second, the important column.
+	similar to the [[09-Version 4]], we can also use Burp Suite to guess, first, the important table and second, the important column.
 
 3. if the version is shown in the first step (1), but the important table isn't shown in the second step (2).
     (it means that we don't encounter an any error and the important table doesn't show in web page)

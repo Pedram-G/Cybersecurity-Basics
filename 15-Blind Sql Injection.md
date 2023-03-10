@@ -1,8 +1,8 @@
 # <mark style="background: #FF5582A6;">Prerequisite :</mark>
-[[6-Limit (Method)]]
-[[7-Like (Method)]]
+[[06-Limit (Method)]]
+[[07-Like (Method)]]
 Knowing How To Work With Burp Suite 
-[[9-Version 4]]
+[[09-Version 4]]
 
 # Description :
 - In this method, nothing is printed on the site page.
@@ -36,7 +36,7 @@ At this step, we need to find the name of the important table.
 
 - <mark style="background: #FFB86CA6;">and (select 1 from x limit 0,1)=1--</mark> 
 
-	- Using Burp Suite similar to [[9-Version 4]] :
+	- Using Burp Suite similar to [[09-Version 4]] :
 
 - <mark style="background: #FFB86CA6;">and (select 1 from x limit 0,1)=1--</mark> 
 
@@ -47,12 +47,12 @@ At this step, we need to find the name of the important table.
 	3. first of all, click <mark style="background: #FF5582A6;">clear</mark> and <mark style="background: #FF5582A6;">select aaaa</mark> and click <mark style="background: #FF5582A6;">add</mark> .
 	4. <mark style="background: #FF5582A6;">payload</mark> section ---> the <mark style="background: #FF5582A6;">set</mark> part should be on <mark style="background: #FF5582A6;">1</mark> and the <mark style="background: #FF5582A6;">type</mark> part should be on <mark style="background: #FF5582A6;">runtime file</mark> .
 	5. we give it <mark style="background: #FF5582A6;">the list of tables</mark> we have.
-	   (E: \ PEDRAM \ Web Pentest \ Tables (Burp Suite).txt) or [[Tables (Burp Suite)]]
+	   (E: \ PEDRAM \ Web Pentest \ Tables (Burp Suite).txt) or [[17-Tables (Burp Suite)]]
 	6. click <mark style="background: #FF5582A6;">START</mark> .
 	7. our answer is the word that the <mark style="background: #FF5582A6;">length has more than other</mark> .
 	   (7000s are errors)
 
-2. The combined method of [[7-Like (Method)]] and [[2-Sql Injection (Basic)]] and blind :
+2. The combined method of [[07-Like (Method)]] and [[02-Sql Injection (Basic)]] and blind :
 
 - <mark style="background: #FFB86CA6;">and ascii(substring((select table_name from information_schema.columns where column_name like '%pas%' limit 0,1),1,1))>100--</mark> 
 
@@ -109,7 +109,7 @@ At this step, we need to find the name of the important table.
    
 	- <mark style="background: #FFB86CA6;">and (select substring(concat(1,y),1,1) from 'important table' limit 0,1)=1-- </mark> 
 
-   - Using Burp Suite similar to [[9-Version 4]] :
+   - Using Burp Suite similar to [[09-Version 4]] :
 
 	- <mark style="background: #FFB86CA6;">and (select substring(concat(1,y),1,1) from 'important table' limit 0,1)=1--</mark> 
 	

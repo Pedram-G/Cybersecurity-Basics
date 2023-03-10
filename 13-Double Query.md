@@ -7,8 +7,8 @@
 
 2. if nothing is displayed with the first double query command, then we don't have this vulnerability.
 
-3. if double query and [[12-Xpath Injection]] methods, don't work from one of the steps, we will continue with [[2-Sql Injection (Basic)]].
-    because [[2-Sql Injection (Basic)]] doesn't limit the number of characters to be printed, of course, if the site has this vulnerability.
+3. if double query and [[12-Xpath Injection]] methods, don't work from one of the steps, we will continue with [[02-Sql Injection (Basic)]].
+    because [[02-Sql Injection (Basic)]] doesn't limit the number of characters to be printed, of course, if the site has this vulnerability.
 
 4. if we encounter an <mark style="background: #FF5582A6;">Not Acceptable error</mark> in <mark style="background: #FF5582A6;">the first step of the double query</mark> , <mark style="background: #FF5582A6;">there isn't any bypass</mark> for this.
 
