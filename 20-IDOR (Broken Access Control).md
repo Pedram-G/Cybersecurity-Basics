@@ -1,9 +1,9 @@
 # <mark style="background: #FF5582A6;">Description :</mark> 
-this vulnerability is included in : [[13-Broken Access Control]]
+this vulnerability is included in : Broken Access Control
 
 این آسیب پذیری (تعریف نا امن اشیا) با اسکنر پیدا نمیشود و فقط دستی یا با برپ سوین قابل انجام
 است
-[[9-Burp Suite]]
+Burp Suite
 # Examples :
 1. Target : mysite.com
      این سایت مثال یک بخشی داشت برای تغییر پسورد به اسم
@@ -15,7 +15,7 @@ this vulnerability is included in : [[13-Broken Access Control]]
      ما فکر میکنیم که اگر همون پارامتر از علامت سوال تا عدد را جلوی مای داشبورد بذاریم چه میشود
      mystite.com/change_pass/mydashboard?nid=1
      در نتیجه اطلاعات حساب کاربری شخص دیگری را میبینیم وحتی ممکن است با برپ سوییت بشود ایمیل آن حساب هم عوض کرد
-     [[9-Burp Suite]]
+     Burp Suite
      در چنین حالتی وقتی ایمیل کاربر را عوض کردیم، با انجام عملیات فراموشی رمز در حالی که ایمیل او را عوض کردیم، به حساب آن شخص وارد میشویم
 
 2. Target : site.com
